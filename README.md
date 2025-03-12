@@ -2,6 +2,10 @@
 
 This project adds new features to the Memory server offered by the MCP team. It allows for the creation and management of a knowledge graph that captures interactions via a language model (LLM).
 
+<a href="https://glama.ai/mcp/servers/w6hi2myrxq">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/w6hi2myrxq/badge" alt="Memory Custom MCP server" />
+</a>
+
 ## New Features
 
 ### 1. Custom Memory Paths
