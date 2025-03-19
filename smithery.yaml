@@ -1,0 +1,30 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      memoryFilePath:
+        type: string
+        description: Absolute path to the memory file (optional). If not provided,
+          defaults to memory.json in the current directory.
+    default: {}
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => {
+      // Use MEMORY_FILE_PATH from config if provided
+      const env = {};
+      if(config.memoryFilePath) {
+        env.MEMORY_FILE_PATH = config.memoryFilePath;
+      }
+      return {
+        command: 'node',
+        args: ['dist/index.js'],
+        env
+      };
+    }
+  exampleConfig:
+    memoryFilePath: /absolute/path/to/memory.json

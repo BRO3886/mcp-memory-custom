@@ -1,5 +1,7 @@
 # Memory Custom
 
+[![smithery badge](https://smithery.ai/badge/@BRO3886/mcp-memory-custom)](https://smithery.ai/server/@BRO3886/mcp-memory-custom)
+
 This project adds new features to the Memory server offered by the MCP team. It allows for the creation and management of a knowledge graph that captures interactions via a language model (LLM).
 
 <a href="https://glama.ai/mcp/servers/w6hi2myrxq">
@@ -23,6 +25,14 @@ This project adds new features to the Memory server offered by the MCP team. It 
 ### Prerequisites
 
 - Node.js (version 16 or higher)
+
+### Installing via Smithery
+
+To install Knowledge Graph Memory Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@BRO3886/mcp-memory-custom):
+
+```bash
+npx -y @smithery/cli install @BRO3886/mcp-memory-custom --client claude
+```
 
 ### Installation
 
@@ -64,8 +74,7 @@ System Prompt changes:
 
 ```
 Follow these steps for each interaction:
-1. Set memory_file_path as /path/to/memory/project_name.json
-
+1. The memoryFilePath for this project is /path/to/memory/project_name.json - always pass this path to the memory file operations (when creating entities, relations, or retrieving memory etc.)
 2. User Identification:
    - You should assume that you are interacting with default_user
    - If you have not identified default_user, proactively try to do so.
@@ -119,11 +128,6 @@ The server exposes several tools that can be called with specific parameters:
 - **Search Nodes**
 - **Open Nodes**
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Inspired by the Memory server from Anthropic.
-- Thanks to the contributors and the open-source community for their support.
